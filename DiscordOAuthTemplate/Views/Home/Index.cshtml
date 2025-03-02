@@ -1,0 +1,23 @@
+﻿@using System.Security.Claims
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    @{
+        var identity = User.Identity;
+        if (identity != null)
+        {
+            if (!identity.IsAuthenticated)
+            {
+                <p>Not logged in</p>
+                <a href="login">Login</a>
+            }
+            else
+            {
+                var name = User.Claims.FirstOrDefault(c => c.Type == "urn:discord:globalname")?.Value ?? User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value;
+                <p>Logged in as @name</p>
+            }
+        }
+    }
+</div>
