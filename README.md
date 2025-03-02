@@ -1,4 +1,4 @@
-# DiscordOAuthTemplate
+# DiscordOAuth2Template
 ASP.NET Coreを用いた Discord OAuth2認証のテンプレート。(ほぼ自分用)
 
 ## 使用したもの
